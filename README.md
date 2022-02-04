@@ -217,7 +217,10 @@ As of v3.0, messages now have an optional ID that can be added on creation.If yo
     }
     ```
   - By default, `target` value is `_blank` which will open the link in a new window.
+  - **startRecording**
 
+  - **stopRecording**
+  
 - **renderCustomComponent**
   - params: 
     - component: Component to be render,

@@ -7,11 +7,17 @@ import { GlobalState } from 'src/store/types';
 import { getCaretIndex, isFirefox, updateCaret, insertNodeAtCaret, getSelection } from '../../../../../../utils/contentEditable'
 const send = require('../../../../../../../assets/send_button.svg') as string;
 const emoji = require('../../../../../../../assets/icon-smiley.svg') as string;
+const micBlack = require('../../../../../../../assets/mic.svg') as string;
+const micRed = require('../../../../../../../assets/mic-red.svg') as string;
 const brRegex = /<br>/g;
 
 import './style.scss';
 
 type Props = {
+  startRecording: () => void;
+  stopRecording: () => void;
+  isRecording: boolean;
+  handleStream: () => void;
   placeholder: string;
   disabledInput: boolean;
   autofocus: boolean;
@@ -22,15 +28,20 @@ type Props = {
   onTextInputChange?: (event: any) => void;
 }
 
-function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInputChange, buttonAlt, onPressEmoji, onChangeSize }: Props, ref) {
+function Sender({ startRecording, stopRecording, isRecording, handleStream, sendMessage, placeholder, disabledInput, autofocus, onTextInputChange, buttonAlt, onPressEmoji, onChangeSize }: Props, ref) {
   const showChat = useSelector((state: GlobalState) => state.behavior.showChat);
   const inputRef = useRef<HTMLDivElement>(null!);
   const refContainer = useRef<HTMLDivElement>(null);
   const [enter, setEnter]= useState(false)
   const [firefox, setFirefox] = useState(false);
   const [height, setHeight] = useState(0)
+  let mic = isRecording ? micRed : micBlack;
   // @ts-ignore
   useEffect(() => { if (showChat && autofocus) inputRef.current?.focus(); }, [showChat]);
+  debugger
+  useEffect(() => {
+    mic = isRecording ? micRed : micBlack;
+  }, [isRecording])
   useEffect(() => { setFirefox(isFirefox())}, [])
 
   useImperativeHandle(ref, () => {
@@ -147,6 +158,9 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
         />
         
       </div>
+      <button type="button" className="rcw-send" onClick={handleStream}>
+        <img src={mic} className="rcw-send-icon" alt={buttonAlt} />
+      </button>
       <button type="submit" className="rcw-send" onClick={handlerSendMessage}>
         <img src={send} className="rcw-send-icon" alt={buttonAlt} />
       </button>

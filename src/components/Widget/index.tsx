@@ -31,6 +31,10 @@ type Props = {
   imagePreview?: boolean;
   zoomStep?: number;
   handleSubmit?: AnyFunction;
+  startRecording: AnyFunction;
+  stopRecording: AnyFunction;
+  handleStream: AnyFunction;
+  isRecording: boolean;
   showBadge?: boolean;
   resizable?: boolean;
   emojis?: boolean;
@@ -61,6 +65,10 @@ function Widget({
   imagePreview,
   zoomStep,
   handleSubmit,
+  startRecording,
+  stopRecording,
+  handleStream,
+  isRecording,
   showBadge,
   resizable,
   emojis
@@ -91,6 +99,8 @@ function Widget({
     <WidgetLayout
       onToggleConversation={toggleConversation}
       onSendMessage={handleMessageSubmit}
+      startRecording={startRecording}
+      stopRecording={stopRecording}
       onQuickButtonClicked={onQuickButtonClicked}
       title={title}
       titleAvatar={titleAvatar}
@@ -112,6 +122,8 @@ function Widget({
       showTimeStamp={showTimeStamp}
       imagePreview={imagePreview}
       zoomStep={zoomStep}
+      handleStream={handleStream}
+      isRecording={isRecording}
       showBadge={showBadge}
       resizable={resizable}
       emojis={emojis}

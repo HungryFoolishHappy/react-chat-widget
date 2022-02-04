@@ -36,6 +36,10 @@ type Props = {
   showTimeStamp: boolean;
   imagePreview?: boolean;
   zoomStep?: number;
+  startRecording: AnyFunction;
+  stopRecording: AnyFunction;
+  handleStream: AnyFunction;
+  isRecording: boolean;
   showBadge?: boolean;
   resizable?: boolean;
   emojis?: boolean
@@ -64,6 +68,10 @@ function WidgetLayout({
   sendButtonAlt,
   showTimeStamp,
   imagePreview,
+  startRecording,
+  stopRecording,
+  handleStream,
+  isRecording,
   zoomStep,
   showBadge,
   resizable,
@@ -132,6 +140,8 @@ function WidgetLayout({
           title={title}
           subtitle={subtitle}
           sendMessage={onSendMessage}
+          startRecording={startRecording}
+          stopRecording={stopRecording}
           senderPlaceHolder={senderPlaceHolder}
           profileAvatar={profileAvatar}
           profileClientAvatar={profileClientAvatar}
@@ -145,6 +155,8 @@ function WidgetLayout({
           onTextInputChange={onTextInputChange}
           sendButtonAlt={sendButtonAlt}
           showTimeStamp={showTimeStamp}
+          handleStream={handleStream}
+          isRecording={isRecording}
           resizable={resizable}
           emojis={emojis}
         />
