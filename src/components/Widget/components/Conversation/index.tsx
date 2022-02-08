@@ -34,8 +34,6 @@ type Props = {
   showTimeStamp: boolean;
   resizable?: boolean;
   emojis?: boolean;
-  startRecording: AnyFunction;
-  stopRecording: AnyFunction;
   isRecording: boolean;
   handleStream: AnyFunction;
 };
@@ -49,8 +47,6 @@ function Conversation({
   autofocus,
   className,
   sendMessage,
-  startRecording,
-  stopRecording,
   toggleChat,
   profileAvatar,
   profileClientAvatar,
@@ -134,8 +130,6 @@ function Conversation({
       />)}
       <Sender
         ref={senderRef}
-        startRecording={startRecording}
-        stopRecording={stopRecording}
         handleStream={handleStream}
         isRecording={isRecording}
         sendMessage={handlerSendMsn}

@@ -32,8 +32,6 @@ type Props = {
   zoomStep?: number;
   emojis?: boolean;
   handleSubmit?: AnyFunction;
-  startRecording: AnyFunction;
-  stopRecording: AnyFunction;
   handleStream:AnyFunction;
   isRecording: boolean;
   showBadge?: boolean;
@@ -65,8 +63,6 @@ function ConnectedWidget({
   imagePreview,
   zoomStep,
   handleSubmit,
-  startRecording,
-  stopRecording,
   handleStream,
   isRecording,
   showBadge,
@@ -100,8 +96,6 @@ function ConnectedWidget({
         imagePreview={imagePreview}
         zoomStep={zoomStep} 
         handleSubmit={handleSubmit}
-        startRecording={startRecording}
-        stopRecording={stopRecording}
         handleStream={handleStream}
         isRecording={isRecording}
         showBadge={showBadge}

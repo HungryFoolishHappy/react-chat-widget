@@ -14,8 +14,6 @@ const brRegex = /<br>/g;
 import './style.scss';
 
 type Props = {
-  startRecording: () => void;
-  stopRecording: () => void;
   isRecording: boolean;
   handleStream: () => void;
   placeholder: string;
@@ -28,7 +26,7 @@ type Props = {
   onTextInputChange?: (event: any) => void;
 }
 
-function Sender({ startRecording, stopRecording, isRecording, handleStream, sendMessage, placeholder, disabledInput, autofocus, onTextInputChange, buttonAlt, onPressEmoji, onChangeSize }: Props, ref) {
+function Sender({ isRecording, handleStream, sendMessage, placeholder, disabledInput, autofocus, onTextInputChange, buttonAlt, onPressEmoji, onChangeSize }: Props, ref) {
   const showChat = useSelector((state: GlobalState) => state.behavior.showChat);
   const inputRef = useRef<HTMLDivElement>(null!);
   const refContainer = useRef<HTMLDivElement>(null);
