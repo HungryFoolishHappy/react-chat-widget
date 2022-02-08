@@ -8,9 +8,10 @@ type Props = {
   toggleChat: () => void;
   showCloseButton: boolean;
   titleAvatar?: string;
+  customHeaderTopComponent: () => void;
 }
 
-function Header({ title, subtitle, toggleChat, showCloseButton, titleAvatar }: Props) {
+function Header({ title, subtitle, toggleChat, showCloseButton, titleAvatar, customHeaderTopComponent }: Props) {
   return (
     <div className="rcw-header">
       {showCloseButton &&
@@ -18,6 +19,7 @@ function Header({ title, subtitle, toggleChat, showCloseButton, titleAvatar }: P
           <img src={close} className="rcw-close" alt="close" />
         </button>
       }
+      {customHeaderTopComponent()}
       <h4 className="rcw-title">
         {titleAvatar && <img src={titleAvatar} className="avatar" alt="profile" />}
         {title}

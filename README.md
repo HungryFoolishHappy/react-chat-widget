@@ -217,9 +217,6 @@ As of v3.0, messages now have an optional ID that can be added on creation.If yo
     }
     ```
   - By default, `target` value is `_blank` which will open the link in a new window.
-  - **startRecording**
-
-  - **stopRecording**
   
 - **renderCustomComponent**
   - params: 
@@ -295,3 +292,7 @@ function MyApp() {
 This project is maintained by [Martín Callegari](https://github.com/mcallegari10) and it was written by [Wolox](http://www.wolox.com.ar).
 
 ![Wolox](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)
+
+## Delight Dev
+### customHeaderTopComponent
+Add language dropdown menu

@@ -32,6 +32,7 @@ type Props = {
   zoomStep?: number;
   handleSubmit?: AnyFunction;
   handleStream: AnyFunction;
+  customHeaderTopComponent: AnyFunction;
   isRecording: boolean;
   showBadge?: boolean;
   resizable?: boolean;
@@ -64,6 +65,7 @@ function Widget({
   zoomStep,
   handleSubmit,
   handleStream,
+  customHeaderTopComponent,
   isRecording,
   showBadge,
   resizable,
@@ -117,6 +119,7 @@ function Widget({
       imagePreview={imagePreview}
       zoomStep={zoomStep}
       handleStream={handleStream}
+      customHeaderTopComponent={customHeaderTopComponent}
       isRecording={isRecording}
       showBadge={showBadge}
       resizable={resizable}

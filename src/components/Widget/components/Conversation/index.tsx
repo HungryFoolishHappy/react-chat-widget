@@ -36,6 +36,7 @@ type Props = {
   emojis?: boolean;
   isRecording: boolean;
   handleStream: AnyFunction;
+  customHeaderTopComponent: AnyFunction;
 };
 
 function Conversation({
@@ -57,6 +58,7 @@ function Conversation({
   showTimeStamp,
   isRecording,
   handleStream,
+  customHeaderTopComponent,
   resizable,
   emojis
 }: Props) {
@@ -117,6 +119,7 @@ function Conversation({
         toggleChat={toggleChat}
         showCloseButton={showCloseButton}
         titleAvatar={titleAvatar}
+        customHeaderTopComponent={customHeaderTopComponent}
       />
       <Messages
         profileAvatar={profileAvatar}

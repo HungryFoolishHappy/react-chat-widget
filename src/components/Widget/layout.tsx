@@ -37,6 +37,7 @@ type Props = {
   imagePreview?: boolean;
   zoomStep?: number;
   handleStream: AnyFunction;
+  customHeaderTopComponent: AnyFunction;
   isRecording: boolean;
   showBadge?: boolean;
   resizable?: boolean;
@@ -67,6 +68,7 @@ function WidgetLayout({
   showTimeStamp,
   imagePreview,
   handleStream,
+  customHeaderTopComponent,
   isRecording,
   zoomStep,
   showBadge,
@@ -150,6 +152,7 @@ function WidgetLayout({
           sendButtonAlt={sendButtonAlt}
           showTimeStamp={showTimeStamp}
           handleStream={handleStream}
+          customHeaderTopComponent={customHeaderTopComponent}
           isRecording={isRecording}
           resizable={resizable}
           emojis={emojis}

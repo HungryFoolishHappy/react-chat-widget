@@ -32,7 +32,8 @@ type Props = {
   zoomStep?: number;
   emojis?: boolean;
   handleSubmit?: AnyFunction;
-  handleStream:AnyFunction;
+  handleStream: AnyFunction;
+  customHeaderTopComponent: AnyFunction;
   isRecording: boolean;
   showBadge?: boolean;
   resizable?: boolean;
@@ -64,6 +65,7 @@ function ConnectedWidget({
   zoomStep,
   handleSubmit,
   handleStream,
+  customHeaderTopComponent,
   isRecording,
   showBadge,
   resizable,
@@ -97,6 +99,7 @@ function ConnectedWidget({
         zoomStep={zoomStep} 
         handleSubmit={handleSubmit}
         handleStream={handleStream}
+        customHeaderTopComponent={customHeaderTopComponent}
         isRecording={isRecording}
         showBadge={showBadge}
         resizable={resizable}
