@@ -126,6 +126,7 @@ const defaultProps = {
   imagePreview: false,
   zoomStep: 80,
   showBadge: true,
+  customHeaderTopComponent: () => {},
 };
 ConnectedWidget.defaultProps = defaultProps;
 
